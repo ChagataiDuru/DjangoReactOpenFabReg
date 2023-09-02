@@ -1,0 +1,162 @@
+<FormControlLabel
+    control={<Checkbox value="remember" color="primary" />}
+    label="Remember me"
+/>
+
+const onNewScanResult = (decodedText, decodedResult) => {
+  console.log(decodedResult)
+  console.log(decodedText)
+}
+
+
+
+            <Card>
+                <Box
+                    variant="gradient"
+                    bgColor="info"
+                    borderRadius="lg"
+                    coloredShadow="success"
+                    mx={2}
+                    mt={-3}
+                    p={3}
+                    mb={1}
+                    textAlign="center"
+                >
+                    <Typography variant="h4" fontWeight="medium" color="white" mt={1}>
+                        REKROM GIVES YOU WINGS
+                    </Typography>
+                </Box>
+                <Box pt={4} pb={3} px={3}>
+                    <Box
+                        component="form"
+                        role="form"
+                        onSubmit={formik.handleSubmit}
+                    >
+                        <Box mb={2}>
+                            <TextField
+                                type="text"
+                                label="username"
+                                name="username"
+                                variant="standard"
+                                onBlur={formik.handleBlur}
+                                onChange={formik.handleChange}
+                                value={formik.values.username}
+                                fullWidth/>
+                        </Box>
+                        <Box mb={2}>
+                            <TextField
+                                type="email"
+                                label="email"
+                                name="email"
+                                variant="standard"
+                                onBlur={formik.handleBlur}
+                                onChange={formik.handleChange}
+                                value={formik.values.email}
+                                fullWidth/>
+                        </Box>
+                        <Box mb={2}>
+                            <TextField
+                                type="password"
+                                label="password"
+                                name="password1"
+                                variant="standard"
+                                onBlur={formik.handleBlur}
+                                onChange={formik.handleChange}
+                                value={formik.values.password1}
+                                fullWidth/>
+                        </Box>
+                        <Box mb={2}>
+                            <TextField
+                                type="password"
+                                label="password again"
+                                name="password2"
+                                variant="standard"
+                                onBlur={formik.handleBlur}
+                                onChange={formik.handleChange}
+                                value={formik.values.password2}
+                                fullWidth/>
+                        </Box>
+                        <Box display="flex" alignItems="center" ml={-1}>
+                            <Checkbox/>
+                            <Typography
+                                variant="button"
+                                fontWeight="regular"
+                                color="text"
+                                sx={{cursor: "pointer", userSelect: "none", ml: -1}}
+                            >
+                                &nbsp;&nbsp;I agree the&nbsp;
+                            </Typography>
+                            <Typography
+                                component="a"
+                                href="#"
+                                variant="button"
+                                fontWeight="bold"
+                                color="info"
+                                textGradient
+                            >
+                                Terms and Conditions
+                            </Typography>
+                        </Box>
+                        <Box mt={4} mb={1} textAlign="center">
+                            <Button
+                                color="primary"
+                                disabled={formik.isSubmitting}
+                                fullWidth
+                                size="large"
+                                type="submit"
+                                variant="contained"
+                            >
+                                Sign In Now
+                            </Button>
+                        </Box>
+                    </Box>
+                </Box>
+            </Card>
+
+
+
+
+
+
+
+
+
+            <Select
+              labelId="userDepart-label"
+              id="userDepart"
+              name="userDepart"
+              onChange={formik.handleChange}
+              input={<OutlinedInput label="Department" />}
+              fullWidth
+              label="Department"
+              value={depart}
+            >
+              {Departments.map((departs) => (
+                <MenuItem
+                  key={departs}
+                  value={departs}
+                >
+                  {departs}
+                </MenuItem>
+              ))}
+
+            </Select>
+            <Select
+              labelId="userClass-label"
+              id="userClass"
+              name="userClass"
+              onChange={formik.handleChange}
+              input={<OutlinedInput label="Class" />}
+              fullWidth
+              label="Class"
+              value={classuser}
+            >
+              { Class.map((userClass) => (
+                <MenuItem
+                  key={userClass}
+                  value={userClass}
+                >
+                  {userClass}
+                </MenuItem>
+              ))}
+            </Select>
