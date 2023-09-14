@@ -17,8 +17,10 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
 import BusinessOutlinedIcon from '@material-ui/icons/BusinessOutlined';
+import SchoolOutlinedIcon from '@material-ui/icons/SchoolOutlined';
 
 import {useFormik} from "formik";
+import { useParams } from "react-router-dom";
 
 import * as Yup from 'yup';
 import axios from "axios";
@@ -39,7 +41,7 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
 
   typography: {
-    fontFamily: 'OpenSans'
+    fontFamily: 'Open Sans'
   },
   root: {
     height: "100vh",
@@ -87,31 +89,39 @@ const useStyles = makeStyles((theme) => ({
 
 function Cover() {
     const classes = useStyles(); // eslint-disable-next-line
+    const { id } = useParams();
+    const type = parseInt(id);
     const goLogin = () => {
-
+      window.location.href = "/login";
     }
     const formik = useFormik({
         initialValues: {
             namesurname: "",
             email: "",
             compDep: "",
+            otherId: "",
+            otherType: type,
         },
         validationSchema: Yup.object({
             namesurname: Yup
                 .string()
-                .max(20)
+                .max(255)
                 .required('namesurname is required'),
             email: Yup
                 .string()
                 .max(255)
                 .required('email is required'),
+            otherId: Yup
+                .string()
+                .max(255)
+                .required('Id is required'),
             compDep: Yup
                 .string()
                 .max(255),
         }),
         onSubmit: async (values) => {
             console.log(values);
-            await axios.post("http://127.0.0.1:8000/api/student/", values)
+            await axios.post("http://127.0.0.1:8000/api/others/", values)
                 .then((response) => {
                     if (response && response.data) {
                         console.log(response.data)
@@ -165,6 +175,7 @@ function Cover() {
                 style: {
                   padding: "3px",
                   borderRadius: "25px",
+                  marginBottom: "10px",
                 }
               }}
             />
@@ -187,6 +198,30 @@ function Cover() {
                 style: {
                   padding: "3px",
                   borderRadius: "25px",
+                  marginBottom: "10px",
+                }
+              }}
+            />
+            <TextField
+              onChange={formik.handleChange}
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="otherId"
+              label="Id"
+              name="otherId"
+              autoFocus
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SchoolOutlinedIcon />
+                  </InputAdornment>
+                ),
+                style: {
+                  padding: "3px",
+                  borderRadius: "25px",
+                  marginBottom: "10px",
                 }
               }}
             />
@@ -209,6 +244,7 @@ function Cover() {
                 style: {
                   padding: "3px",
                   borderRadius: "25px",
+                  marginBottom: "10px",
                 }
               }}
             />

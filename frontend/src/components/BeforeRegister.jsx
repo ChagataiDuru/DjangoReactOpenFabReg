@@ -29,7 +29,10 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
 
   typography: {
-    fontFamily: 'OpenSans'
+    fontFamily: 'Open Sans',
+    button: {
+      textTransform: 'none'
+    }
   },
   root: {
     height: "100vh",
@@ -69,6 +72,10 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    borderRadius: 50,
+    padding: "20px 36px",
+    fontFamily: 'Open Sans',fontSize: "24px",color:"#231f20",fontWeight: "lighter",
+    textTransform: 'none'
   },
   logo: {
     maxWidth: 240,
@@ -78,7 +85,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Main(props) {
 
   const classes = useStyles();
-
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -99,6 +105,8 @@ export default function Main(props) {
           </Toolbar>
           <Typography variant="h6" fontWeight="low" mt={1}>
                                 Welcome!
+          </Typography>
+          <Typography variant="h6" fontWeight="low" mt={1}>
                         Please select your current state. :)
           </Typography>
           <form className={classes.form} noValidate>
@@ -106,46 +114,26 @@ export default function Main(props) {
                   type="submit"
                   href="/signup"
                   fullWidth
-                  variant="outlined"
-                  style={{
-                    borderRadius: 50,
-                    padding: "20px 36px",
-                    fontSize: "14px",
-                    fontWeight: 900,
-                    fontFamily: 'Open Sans',
-                  }}            
+                  variant="outlined"  
+                  label='Styled button'    
                   className={classes.submit}
-                >
-                Student
-              </Button>
+                  >
+                  Student
+                </Button>
             <Button
               type="submit"
-              href="/signupother"
+              href="/signupother/2"
               fullWidth
               variant="outlined"
-              style={{
-                borderRadius: 50,
-                padding: "20px 36px",
-                fontWeight: 900,
-                color: "#231f20",
-                fontSize: "14px",
-                fontFamily: "Open Sans",
-              }}            
               className={classes.submit}
             >
               Academician
             </Button>
             <Button
                   type="submit"
-                  href="/signupother"
+                  href="/signupother/3"
                   fullWidth
-                  variant="outlined"
-                  style={{
-                    borderRadius: 50,
-                    padding: "20px 36px",
-                    fontWeight: 900,
-                    fontFamily: 'Open Sans',
-                  }}            
+                  variant="outlined"         
                   onClick={()=> props.displaySecrete(1)}
                   className={classes.submit}
                 >
@@ -153,15 +141,9 @@ export default function Main(props) {
               </Button>
             <Button
               type="submit"
-              href="/signupother"
+              href="/signupother/4"
               fullWidth
-              variant="outlined"
-              style={{
-                borderRadius: 50,
-                padding: "20px 36px",
-                fontWeight: 900,
-                fontFamily: "Open Sans",
-              }}            
+              variant="outlined"      
               className={classes.submit}
             >
               Other

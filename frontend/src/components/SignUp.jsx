@@ -190,6 +190,7 @@ function Cover() {
                 style: {
                   padding: "3px",
                   borderRadius: "25px",
+                  marginBottom: "10px"
                 }
               }}
             />
@@ -212,6 +213,7 @@ function Cover() {
                 style: {
                   padding: "3px",
                   borderRadius: "25px",
+                  marginBottom: "10px" 
                 }
               }}
 
@@ -230,8 +232,9 @@ function Cover() {
                     </InputAdornment>
                   ),
                   style: {
-                    padding: "3px",
+                    padding: "2px",
                     borderRadius: "25px",
+                    marginBottom: "20px"
                   }
                 }}
 
@@ -272,8 +275,9 @@ function Cover() {
                       </InputAdornment>
                     ),
                     style: {
-                      padding: "3px",
+                      padding: "2px",
                       borderRadius: "25px",
+                      marginBottom: "20px"
                     }
                   }}
                   select

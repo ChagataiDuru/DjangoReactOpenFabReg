@@ -9,19 +9,24 @@ class StudentAdmin(admin.ModelAdmin):
     ordering = ('namesurname', 'studentid', 'userDepart', 'userClass')
 
 
-admin.site.register(Student)
+admin.site.register(Student, StudentAdmin)
 
 
 class OthersAdmin(admin.ModelAdmin):
-    list_display = ('namesurname', 'email', 'compDep', 'purpose')
-    search_fields = ('namesurname', 'email', 'compDep', 'purpose')
-    list_filter = ('namesurname', 'email', 'compDep', 'purpose')
-    ordering = ('namesurname', 'email', 'compDep', 'purpose')
+    list_display = ('namesurname', 'email', 'compDep')
+    search_fields = ('namesurname', 'email', 'compDep')
+    list_filter = ('namesurname', 'email', 'compDep')
+    ordering = ('namesurname', 'email', 'compDep')
+
+admin.site.register(Others, OthersAdmin)
 
 
-admin.site.register(Others)
+class CheckinAdmin(admin.ModelAdmin):
+    list_display = ('student', 'checkin', 'purpose')
+    search_fields = ('student', 'checkin', 'purpose')
+    list_filter = ('student', 'checkin', 'purpose')
+    ordering = ('student', 'checkin', 'purpose')
 
-
-admin.site.register(Checkin)
+admin.site.register(Checkin, CheckinAdmin)
 
 # Register your models here.

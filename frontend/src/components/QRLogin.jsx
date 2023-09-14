@@ -84,8 +84,8 @@ export default function QRLogin(props) {
   const classes = useStyles();
 
   function createPost(data) {
-    axios.post("http://127.0.0.1:8000/api/studentidcheck/", {
-        studentid: data,
+    axios.post("http://127.0.0.1:8000/api/id/", {
+        id: data,
       })
       .then((res) => {
         if (res && res.data) {

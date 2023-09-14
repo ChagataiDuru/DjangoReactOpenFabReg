@@ -94,7 +94,7 @@ export default function Main(props) {
     console.log("Hello")
     axios
       .post("http://127.0.0.1:8000/api/updatecheckin/", {
-        studentid: id,
+        id: id,
         purpose: usage,
       })
       .then((res) => {

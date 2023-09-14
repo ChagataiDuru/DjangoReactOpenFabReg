@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/state" component={State} />
           <Route path="/checkout" component={CheckoutPage} />
           <Route path="/welcome" component={AfterWelcome} />
-          <Route path="/signupother" component={SignUpOther} />
+          <Route path="/signupother/:id" component={SignUpOther} />
     </div>
 
   );
