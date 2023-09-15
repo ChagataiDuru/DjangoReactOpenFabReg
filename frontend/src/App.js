@@ -22,7 +22,7 @@ export default function App() {
           <Route path="/success" component={Success} />
           <Route path="/state" component={State} />
           <Route path="/checkout" component={CheckoutPage} />
-          <Route path="/welcome" component={AfterWelcome} />
+          <Route path="/afterwelcome" component={AfterWelcome} />
           <Route path="/signupother/:id" component={SignUpOther} />
     </div>
 

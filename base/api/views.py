@@ -41,6 +41,7 @@ def OthersView(request):
 def IdCheck(request):
     if request.method == 'POST':
         id = request.data['id']
+        print("id: ", id)
         if id[0] == "S":
             studentid = id[0:7]
             try:
@@ -55,9 +56,11 @@ def IdCheck(request):
             else:
                 return Response({'message': 'No student found with the given ID'}, status=status.HTTP_404_NOT_FOUND)
         else:
-            otherId = id[0:2]
+            print("other")
+            otherId = id[0:3]
             try:
-                otherChecked = Others.objects.get(otherId=otherId)
+                print("otherId:", otherId)
+                otherChecked = Others.objects.get(otherId__startswith=otherId)
             except Others.DoesNotExist:
                 otherChecked = None
 

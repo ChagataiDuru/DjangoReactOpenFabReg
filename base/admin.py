@@ -22,10 +22,10 @@ admin.site.register(Others, OthersAdmin)
 
 
 class CheckinAdmin(admin.ModelAdmin):
-    list_display = ('student', 'checkin', 'purpose')
-    search_fields = ('student', 'checkin', 'purpose')
-    list_filter = ('student', 'checkin', 'purpose')
-    ordering = ('student', 'checkin', 'purpose')
+    list_display = ('checkin', 'purpose','student','other',)
+    search_fields = ('checkin', 'purpose','student','other',)
+    list_filter = ('checkin', 'purpose','student','other',)
+    ordering = ('checkin', 'purpose','student','other',)
 
 admin.site.register(Checkin, CheckinAdmin)
 

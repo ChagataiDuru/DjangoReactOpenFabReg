@@ -47,4 +47,6 @@ class Checkin(models.Model):
     )
 
     def __str__(self):
+        if self.student is None:
+            return self.other.namesurname
         return self.student.namesurname

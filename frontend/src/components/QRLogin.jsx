@@ -92,13 +92,13 @@ export default function QRLogin(props) {
             console.log(res.data)
             console.log("Success")
             console.log(data)
-            props.history.push("/welcome", {state: data})
+            props.history.push("/afterwelcome", {state: data})
         }
     })
     .catch((err) => {
         if (err) {
             console.log("Error:", err)
-            props.history.push("/signup")
+            props.history.push("/state")
         }
     })
   }

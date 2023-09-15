@@ -1,5 +1,4 @@
-import React,{useEffect} from "react";
-import { useHistory } from "react-router";
+import React from "react";
 import Toolbar from "@material-ui/core/Toolbar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Link from "@material-ui/core/Link";
@@ -80,14 +79,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function QRLogin(props) {
-  const history = useHistory()
   const classes = useStyles();
-  useEffect(() => {
-    setTimeout(() => {
-      history.push('/main')
-    }, 6000)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -108,7 +100,6 @@ export default function QRLogin(props) {
           </Toolbar>
           <Typography variant="h8" fontWeight="low" color="white" mt={1}>
                                 Welcome to OPENFAB!
-                        You are the ......rd person who checked-in today.
           </Typography>
           <InputLabel>
                 <Toolbar>

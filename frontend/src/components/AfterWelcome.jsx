@@ -102,6 +102,7 @@ export default function Main(props) {
             console.log(res.data)
             console.log("Success")
             props.history.push("/success")
+            window.location.href = "/success";
         }
     })
       .catch((err) => {
