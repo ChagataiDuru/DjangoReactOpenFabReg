@@ -86,14 +86,14 @@ export default function Main(props) {
   (props.location && props.location.state) || {};
   console.log(number.state)
 
-  //const studentId = number.state;
+  const studentId = number.state;
 
   function createPost(id, usage) {
     console.log(id)
     console.log(usage)
     console.log("Hello")
     axios
-      .post("http://127.0.0.1:8000/api/updatecheckin/", {
+      .post("https://127.0.0.1:8000/api/updatecheckin/", {
         id: id,
         purpose: usage,
       })
@@ -101,7 +101,6 @@ export default function Main(props) {
         if (res && res.data) {
             console.log(res.data)
             console.log("Success")
-            props.history.push("/success")
             window.location.href = "/success";
         }
     })

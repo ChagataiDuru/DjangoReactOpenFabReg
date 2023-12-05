@@ -57,7 +57,7 @@ def IdCheck(request):
                 return Response({'message': 'No student found with the given ID'}, status=status.HTTP_404_NOT_FOUND)
         else:
             print("other")
-            otherId = id[0:3]
+            otherId = id[0:4]
             try:
                 print("otherId:", otherId)
                 otherChecked = Others.objects.get(otherId__startswith=otherId)

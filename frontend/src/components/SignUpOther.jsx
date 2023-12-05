@@ -121,7 +121,7 @@ function Cover() {
         }),
         onSubmit: async (values) => {
             console.log(values);
-            await axios.post("http://127.0.0.1:8000/api/others/", values)
+            await axios.post("https://127.0.0.1:8000/api/others/", values)
                 .then((response) => {
                     if (response && response.data) {
                         console.log(response.data)
